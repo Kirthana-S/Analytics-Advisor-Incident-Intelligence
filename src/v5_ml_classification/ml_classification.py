@@ -47,7 +47,7 @@ def split_data(X, y):
     return train_test_split(
         X,
         y,
-        test_size=0.20,
+        test_size=0.25,
         random_state=42,
         stratify=y,
     )
