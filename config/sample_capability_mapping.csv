@@ -1,0 +1,6 @@
+Level1,Level2,Capability
+Network,Connectivity,Network
+Storage,Disk Capacity,Storage
+Compute,CPU Utilization,CloudOps
+Compute,Windows Service,Windows
+Database,Service Availability,Database
