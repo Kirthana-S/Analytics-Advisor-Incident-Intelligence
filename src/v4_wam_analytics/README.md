@@ -30,6 +30,7 @@ First 20 Days
      vs
 Last 10 Days
 ```
+> The public demonstration preserves the WAM methodology and 20-day vs 10-day trend comparison, while the detailed production threshold logic has been simplified for confidentiality.
 
 ## Processing Flow
 
