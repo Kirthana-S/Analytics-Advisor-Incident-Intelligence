@@ -2,6 +2,25 @@
 
 An enterprise-scale data analytics and machine learning solution developed to automate incident categorization, identify repetitive issues, provide capability-level insights, and support data-driven operational improvements.
 
+## Solution Architecture
+
+```mermaid
+flowchart LR
+
+    A[Incident Data] --> B[Data Preparation]
+    B --> C[Level 1]
+    C --> D[Level 2]
+    D --> E[Capability Mapping]
+    E --> F[WAM Analytics]
+    F --> G[Power BI]
+
+    D --> H[TF-IDF]
+    H --> I[Machine Learning]
+    I --> J[Predicted Category]
+```
+
+For the complete technical architecture, see [`docs/architecture.md`](docs/architecture.md).
+
 ## Project Overview
 
 Analytics 2.0 was developed to address the manual and time-consuming process of categorizing large volumes of IT incident data.
