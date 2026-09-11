@@ -1,0 +1,13 @@
+Incident_ID,Description,Configuration_Item,Assignment_Group,Created_Date,Level1,Level2,Capability
+INC001,CPU utilization exceeded threshold,SERVER-001,OPS-COMPUTE-A,2026-01-01,Compute,CPU Utilization,CloudOps
+INC002,CPU utilization remains high on server,SERVER-001,OPS-COMPUTE-A,2026-01-05,Compute,CPU Utilization,CloudOps
+INC003,Disk space threshold exceeded,SERVER-002,OPS-STORAGE-A,2026-01-03,Storage,Disk Capacity,Storage
+INC004,Filesystem running out of available space,SERVER-002,OPS-STORAGE-A,2026-01-08,Storage,Disk Capacity,Storage
+INC005,Network connectivity unavailable,DEVICE-001,OPS-NETWORK-A,2026-01-04,Network,Connectivity,Network
+INC006,Unable to establish network connection,DEVICE-001,OPS-NETWORK-A,2026-01-12,Network,Connectivity,Network
+INC007,Database service unavailable,DATABASE-001,OPS-DATABASE-A,2026-01-06,Database,Service Availability,Database
+INC008,Database instance stopped unexpectedly,DATABASE-001,OPS-DATABASE-A,2026-01-15,Database,Service Availability,Database
+INC009,Windows service stopped responding,SERVER-003,OPS-WINDOWS-A,2026-01-10,Compute,Windows Service,Windows
+INC010,Windows service unavailable on server,SERVER-003,OPS-WINDOWS-A,2026-01-20,Compute,Windows Service,Windows
+INC011,CPU utilization threshold exceeded again,SERVER-001,OPS-COMPUTE-A,2026-01-24,Compute,CPU Utilization,CloudOps
+INC012,CPU load continues to increase,SERVER-001,OPS-COMPUTE-A,2026-01-28,Compute,CPU Utilization,CloudOps
