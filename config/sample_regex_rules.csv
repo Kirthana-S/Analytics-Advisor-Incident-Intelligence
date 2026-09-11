@@ -1,0 +1,9 @@
+Rule_Level,Level1,Level2,Regex,Priority
+L1,Compute,,.*CPU.*,1
+L1,Storage,,.*Disk.*,1
+L1,Network,,.*Network.*,1
+L1,Database,,.*Database.*,1
+L2,Compute,CPU Utilization,.*CPU.*utilization.*,1
+L2,Storage,Disk Capacity,.*Disk.*space.*,1
+L2,Network,Connectivity,.*connectivity.*,1
+L2,Database,Service Availability,.*service.*unavailable.*,1
