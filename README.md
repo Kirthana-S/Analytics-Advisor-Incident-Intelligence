@@ -76,6 +76,26 @@ For the complete technical journey, see [`docs/solution-evolution.md`](docs/solu
 
 ---
 
+## My Role
+
+### Developer & Tester
+
+My primary contributions included:
+
+- Python development for incident analytics and classification
+- Development and enhancement of the solution across V1–V5
+- Level 1 and Level 2 classification implementation
+- Capability mapping implementation and testing
+- WAM repetitive issue analytics
+- Machine-learning implementation and model evaluation
+- Power BI dashboard and analytics development
+- Testing and validation of solution outputs
+- Iterative technical improvements across solution versions
+
+My primary hands-on development responsibilities were the **Python analytics workflow and Power BI implementation**.
+
+---
+
 ## Solution Architecture
 
 ```mermaid
@@ -324,25 +344,7 @@ For the full project journey, see [`docs/hackathon-journey.md`](docs/hackathon-j
 
 ---
 
-## My Role
 
-### Developer & Tester
-
-My primary contributions included:
-
-- Python development for incident analytics and classification
-- Development and enhancement of the solution across V1–V5
-- Level 1 and Level 2 classification implementation
-- Capability mapping implementation and testing
-- WAM repetitive issue analytics
-- Machine-learning implementation and model evaluation
-- Power BI dashboard and analytics development
-- Testing and validation of solution outputs
-- Iterative technical improvements across solution versions
-
-My primary hands-on development responsibilities were the **Python analytics workflow and Power BI implementation**.
-
----
 
 ## Technology Stack
 
