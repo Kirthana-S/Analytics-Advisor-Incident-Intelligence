@@ -3,12 +3,11 @@ Analytics 2.0 - Version 3
 Capability-Level Incident Mapping
 
 Purpose:
-Extend Level 1 and Level 2 incident classification by mapping
-classified incidents to broader operational capability groups.
+Map individual operational / assignment groups into broader
+technical capabilities and enable capability-aware analysis.
 
-This public version uses synthetic mappings only.
-All organizational names, internal teams, customer information,
-and production mapping data have been removed.
+This public version uses synthetic organizational mappings only.
+Original enterprise team structures are excluded.
 """
 
 import pandas as pd
@@ -19,16 +18,15 @@ def map_capabilities(
     capability_mapping: pd.DataFrame,
 ) -> pd.DataFrame:
     """
-    Map classified incidents to broader capability groups.
+    Map individual assignment groups to broader capabilities.
 
     Expected incident columns:
         Incident_ID
-        Level1
-        Level2
+        Description
+        Assignment_Group
 
     Expected mapping columns:
-        Level1
-        Level2
+        Assignment_Group
         Capability
     """
 
@@ -37,37 +35,38 @@ def map_capabilities(
     mapped_data = data.merge(
         capability_mapping,
         how="left",
-        on=["Level1", "Level2"],
+        on="Assignment_Group",
     )
 
-    mapped_data["Capability"] = mapped_data["Capability"].fillna(
-        "Unmapped"
+    mapped_data["Capability"] = (
+        mapped_data["Capability"]
+        .fillna("Unmapped")
     )
 
     return mapped_data
 
 
-def capability_summary(df: pd.DataFrame) -> pd.DataFrame:
+def capability_summary(
+    df: pd.DataFrame,
+) -> pd.DataFrame:
     """
-    Create a simple incident count summary by capability.
+    Generate incident counts by capability.
     """
 
-    summary = (
+    return (
         df.groupby("Capability")
         .size()
         .reset_index(name="Incident_Count")
         .sort_values(
-            by="Incident_Count",
+            "Incident_Count",
             ascending=False,
         )
     )
 
-    return summary
-
 
 if __name__ == "__main__":
 
-    # Synthetic incident classification output from V2
+    # Synthetic incident records
     incidents = pd.DataFrame(
         {
             "Incident_ID": [
@@ -77,39 +76,32 @@ if __name__ == "__main__":
                 "INC004",
                 "INC005",
             ],
-            "Level1": [
-                "Network",
-                "Storage",
-                "Compute",
-                "Database",
-                "Compute",
+            "Description": [
+                "Network connectivity unavailable",
+                "Disk space threshold exceeded",
+                "CPU utilization exceeded",
+                "Database service unavailable",
+                "Windows service stopped",
             ],
-            "Level2": [
-                "Connectivity",
-                "Disk Capacity",
-                "CPU Utilization",
-                "Service Availability",
-                "Windows Service",
+            "Assignment_Group": [
+                "OPS-NETWORK-A",
+                "OPS-STORAGE-A",
+                "OPS-COMPUTE-A",
+                "OPS-DATABASE-A",
+                "OPS-WINDOWS-A",
             ],
         }
     )
 
-    # Synthetic capability mapping
+    # Synthetic working-group-to-capability mapping
     capability_mapping = pd.DataFrame(
         {
-            "Level1": [
-                "Network",
-                "Storage",
-                "Compute",
-                "Database",
-                "Compute",
-            ],
-            "Level2": [
-                "Connectivity",
-                "Disk Capacity",
-                "CPU Utilization",
-                "Service Availability",
-                "Windows Service",
+            "Assignment_Group": [
+                "OPS-NETWORK-A",
+                "OPS-STORAGE-A",
+                "OPS-COMPUTE-A",
+                "OPS-DATABASE-A",
+                "OPS-WINDOWS-A",
             ],
             "Capability": [
                 "Network",
@@ -121,13 +113,13 @@ if __name__ == "__main__":
         }
     )
 
-    mapped_incidents = map_capabilities(
+    mapped = map_capabilities(
         incidents,
         capability_mapping,
     )
 
     print("Mapped Incidents:\n")
-    print(mapped_incidents)
+    print(mapped)
 
     print("\nCapability Summary:\n")
-    print(capability_summary(mapped_incidents))
+    print(capability_summary(mapped))
