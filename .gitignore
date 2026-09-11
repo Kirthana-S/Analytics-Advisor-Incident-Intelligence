@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Analytics 2.0 - confidential/generated artifacts
+*.pkl
+*.pickle
+*.pbix
+*.xlsx
+*.xls
+
+# Local data / exported outputs
+output/
+outputs/
+models/
