@@ -178,29 +178,56 @@ if __name__ == "__main__":
 
     # Synthetic training data
     sample_data = pd.DataFrame(
-        {
-            "Description": [
-                "CPU utilization threshold exceeded",
-                "Processor load is very high",
-                "Disk space threshold exceeded",
-                "Filesystem running out of space",
-                "Network connectivity unavailable",
-                "Unable to reach network device",
-                "Database service unavailable",
-                "Database instance stopped",
-            ],
-            "Category": [
-                "CPU Utilization",
-                "CPU Utilization",
-                "Disk Capacity",
-                "Disk Capacity",
-                "Connectivity",
-                "Connectivity",
-                "Database Availability",
-                "Database Availability",
-            ],
-        }
-    )
+    {
+        "Description": [
+            # CPU
+            "CPU utilization threshold exceeded",
+            "Processor load is very high",
+            "CPU usage remains above threshold",
+            "High processor utilization detected",
+
+            # Storage
+            "Disk space threshold exceeded",
+            "Filesystem running out of space",
+            "Available disk capacity is low",
+            "Storage volume nearing capacity",
+
+            # Network
+            "Network connectivity unavailable",
+            "Unable to reach network device",
+            "Network connection failed",
+            "Connectivity lost to remote device",
+
+            # Database
+            "Database service unavailable",
+            "Database instance stopped",
+            "Unable to connect to database service",
+            "Database process is not responding",
+        ],
+
+        "Category": [
+            "CPU Utilization",
+            "CPU Utilization",
+            "CPU Utilization",
+            "CPU Utilization",
+
+            "Disk Capacity",
+            "Disk Capacity",
+            "Disk Capacity",
+            "Disk Capacity",
+
+            "Connectivity",
+            "Connectivity",
+            "Connectivity",
+            "Connectivity",
+
+            "Database Availability",
+            "Database Availability",
+            "Database Availability",
+            "Database Availability",
+        ],
+    }
+)
 
     X, y = prepare_data(
         sample_data
