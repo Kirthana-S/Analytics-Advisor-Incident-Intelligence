@@ -2,6 +2,33 @@
 
 ## Architecture Overview
 
+```mermaid
+flowchart TD
+
+    A[Incident Data] --> B[Data Preparation]
+
+    B --> C[Level 1 Classification]
+    C --> D[Level 2 Classification]
+
+    D --> E[Capability Mapping]
+    E --> F[WAM Analytics]
+
+    F --> G[Enriched Analytics Dataset]
+    G --> H[Power BI Dashboards]
+
+    D --> I[Historical Categorized Data]
+    I --> J[TF-IDF Vectorization]
+    J --> K[Model Evaluation]
+
+    K --> L1[LinearSVC]
+    K --> L2[Logistic Regression]
+    K --> L3[Multinomial Naive Bayes]
+    K --> L4[Random Forest]
+
+    L1 --> M[Selected ML Classifier]
+    M --> N[Predicted Incident Category]
+```
+
 Analytics 2.0 is an incident intelligence and analytics solution designed to transform raw incident records into standardized categories, operational insights, repetitive issue trends, and machine-learning-assisted classifications.
 
 The architecture evolved across multiple development versions but can be represented as an end-to-end analytics pipeline.
